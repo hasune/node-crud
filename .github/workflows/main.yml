@@ -4,6 +4,9 @@ on:
   push:
     branches: [ master ]
 
+env:
+  IMAGE_NAME: nodeapp1
+
 jobs:
   # GitHub Packagesにイメージをプッシュ。
   # https://docs.docker.com/docker-hub/builds/ も参照
