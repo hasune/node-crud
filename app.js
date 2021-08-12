@@ -11,7 +11,7 @@ app.post("/", function(req, res) {
 });
 
 app.put("/", function(req, res) {
-  res.send("Put 리퀘스트를 보냈군요!!!");
+  res.send("Put 리퀘스트를 보냈군요!!!!");
 });
 
 app.delete("/", function(req, res) {
