@@ -1,0 +1,21 @@
+name: Publish Docker Image
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  push_to_registry:
+    name: Push Docker image to ghcr.io
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to ghcr.io
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.CR_PAT }}
+          registry: ghcr.io
+          repository: hasune/nodeapp1
+          tag_with_ref: true
